@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.Routing;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
 
@@ -15,6 +16,8 @@ namespace PortfolioOne
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseErrorPage();
+
             // Add static files to the request pipeline.
             app.UseStaticFiles();
 
