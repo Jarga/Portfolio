@@ -1,0 +1,18 @@
+﻿@using System.Linq.Expressions
+@using PortfolioOne.Models
+@using PortfolioOne.Core.Utilities.HtmlHelpers
+@model ContactModel
+
+
+@using (Html.BeginForm("_Contact", "Home", FormMethod.Post))
+{
+
+    @Html.CustomTextBoxFor(m => m.FirstName, "First Name")
+    @Html.CustomTextBoxFor(m => m.LastName, "Last Name")
+    @Html.CustomTextBoxFor(m => m.Email, "Email")
+    @Html.CustomTextAreaFor(m => m.Message, "Message")
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="send_contact_message" data-post-url="@Url.Action("_Contact", "Home")">Send message</button>
+    </div>
+}

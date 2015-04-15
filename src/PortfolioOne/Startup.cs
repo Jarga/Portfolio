@@ -3,12 +3,26 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Routing;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.AspNet.Hosting;
+using Microsoft.Framework.ConfigurationModel;
 
 namespace PortfolioOne
 {
+    public static class Global
+    {
+        public static IConfiguration Configuration { get; set; }
+    }
     public class Startup
     {
-        // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
+
+        public Startup(IHostingEnvironment env)
+        {
+            // Setup configuration sources.
+            Global.Configuration = new Configuration()
+                .AddIniFile("config.ini")
+                .AddEnvironmentVariables();
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
