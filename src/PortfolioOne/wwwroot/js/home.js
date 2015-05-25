@@ -93,6 +93,6 @@ $(document).ready(function () {
 
 function displayContactAlert(alertClass, message) {
     $('.contact-alert').html("<div class='alert " + alertClass + "'>");
-    $('.contact-alert > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>" + message + "</strong></div>");
+    $('.contact-alert > .' + alertClass).html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'><i class='fa fa-times'></i></button><strong>" + message + "</strong></div>");
     $('html, body').animate({ scrollTop: $('.contact-alert').offset().top - ( $('.navbar-fixed-top').outerHeight() + 5) }, 500);
 }

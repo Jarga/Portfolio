@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Mvc;
-using PortfolioOne.Core.Utilities.Filters;
 using PortfolioOne.Models;
 using System.Net;
 using System.Net.Mail;
